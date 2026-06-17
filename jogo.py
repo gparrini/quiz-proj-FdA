@@ -149,6 +149,23 @@ def exibir_regras():
     print("- Ao final, voce vera sua pontuacao e um feedback sobre seu desempenho.")
     print("-----------------------\n")
 
+# Lista de dicionarios com os dados dos criadores do quiz (nome + link do github).
+# Usada pela funcao exibir_creditos() para montar a tela de creditos.
+CRIADORES = [
+    {"nome": "Davi Pimentel", "github": "https://github.com/daviribeiro-p"},
+    {"nome": "Giuseppe Parrini", "github": "https://github.com/gparrini"},
+    {"nome": "Mateus Alves", "github": "https://github.com/fateusmelipe"},
+    {"nome": "Pedro Miclos", "github": "https://github.com/pedromiklos"},
+]
+
+#Função que exibe os créditos dos criadores do quiz.
+def exibir_creditos():
+    print("\n--- CREDITOS ---")
+    print("Quiz desenvolvido por:")
+    for criador in CRIADORES:  # laco for percorrendo a lista de criadores
+        print(f"  - {criador['nome']} | GitHub: {criador['github']}")
+    print("-----------------------\n")
+
 # random.sample garante que as 10 perguntas sorteadas sejam diferentes entre
 # si dentro da mesma partida, e o sorteio muda a cada execucao do programa.
 
@@ -237,17 +254,18 @@ def exibir_menu():
     print("\n----- MENU PRINCIPAL -----")
     print("1. Iniciar Jogo")
     print("2. Regras")
-    print("3. Sair")
+    print("3. Creditos")
+    print("4. Sair")
     print("---------------------------")
 
     opcao = ""
     opcao_valida = False
-    while not opcao_valida:  # repete enquanto a opcao digitada nao for 1, 2 ou 3
+    while not opcao_valida:  # repete enquanto a opcao digitada nao for 1, 2, 3 ou 4
         opcao = input("Escolha uma opcao: ").strip()
-        if opcao == "1" or opcao == "2" or opcao == "3":
+        if opcao == "1" or opcao == "2" or opcao == "3" or opcao == "4":
             opcao_valida = True
         else:
-            print(">> Opcao invalida! Digite 1, 2 ou 3.")
+            print(">> Opcao invalida! Digite 1, 2, 3 ou 4.")
     return opcao
 
 # Função principal: organiza o fluxo do programa.
@@ -268,6 +286,8 @@ def main():
         elif opcao_escolhida == "2":
             exibir_regras()
         elif opcao_escolhida == "3":
+            exibir_creditos()
+        elif opcao_escolhida == "4":
             print("\nEncerrando o quiz. Bons estudos!")
             rodando = False  # condicao que fara o while terminar
         else:
