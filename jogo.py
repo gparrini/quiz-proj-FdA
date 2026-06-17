@@ -149,7 +149,7 @@ def exibir_regras():
     print("- Ao final, voce vera sua pontuacao e um feedback sobre seu desempenho.")
     print("-----------------------\n")
 
-# Lista de dicionarios com os dados dos criadores do quiz (nome + link do github).
+# Lista de dicionarios com nossos links pro github.
 # Usada pela funcao exibir_creditos() para montar a tela de creditos.
 CRIADORES = [
     {"nome": "Davi Pimentel", "github": "https://github.com/daviribeiro-p"},
