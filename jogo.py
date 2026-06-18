@@ -8,6 +8,9 @@ import random
 
 # Banco de perguntas armazenado como uma LISTA DE DICIONÁRIOS. Cada pergunta é um dicionário e, dentro dele, a chave "alternativas" guarda uma LISTA com as 4 opções (índice 0 = A, índice 1 = B, índice 2 = C, índice 3 = D). Ou seja, temos uma lista (banco) que contém dicionários, e cada dicionário contém outra lista (alternativas) -> estrutura equivalente a uma matriz de dados.
 
+
+# Apresentação - Davi
+
 # Perguntas são organizadas por temas, para que o feedback final possa indicar quais assuntos precisam de revisão. O tema de cada pergunta é armazenado na chave "tema" do dicionário.
 BANCO_PERGUNTAS = [
     # Variáves
@@ -134,6 +137,8 @@ LETRAS = ["A", "B", "C", "D"]  # usado para mapear índice da lista -> letra da 
 
 
 
+# Apresentação - Giuseppe
+
 #Função responsável apenas por exibir o cabeçalho.
 def exibir_cabecalho():
     print("=" * 50)
@@ -166,6 +171,10 @@ def exibir_creditos():
         print(f"  - {criador['nome']} | GitHub: {criador['github']}")
     print("-----------------------\n")
 
+
+# Apresentação - Mateus
+
+
 # random.sample garante que as 10 perguntas sorteadas sejam diferentes entre
 # si dentro da mesma partida, e o sorteio muda a cada execucao do programa.
 
@@ -187,6 +196,8 @@ def ler_resposta_usuario():
             print(">> Entrada invalida! Digite apenas A, B, C ou D.\n")
     return resposta
 
+
+# Apresentação Pedro 
 
 # Aplica o quiz: percorre a lista de perguntas sorteadas, mostra cada uma,
 # le a resposta do jogador e verifica se ela esta correta.
@@ -249,6 +260,8 @@ def mostrar_resultado(acertos, total, temas_errados):
 
 
 # Exibe o menu principal e garante, com while + if/elif/else, que o usuário digite apenas uma opcao vailda (1, 2 ou 3).
+
+# Apresentação Giuseppe 2
 
 def exibir_menu():
     print("\n----- MENU PRINCIPAL -----")
